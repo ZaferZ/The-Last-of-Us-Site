@@ -321,6 +321,7 @@
   border-radius: 8px;
   overflow: hidden;
 }
+
 .index .button-sample-3 {
   position: relative;
   width: fit-content;
@@ -1292,6 +1293,233 @@
   pointer-events: none;
 }
 
+.actors-carousel {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  text-align: center;
+  user-select: none;
+}
+
+.actors-carousel .carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  height: 600px;
+  position: relative;
+}
+
+.actors-carousel .carousel-card {
+  background: #232323;
+  border-radius: 8px;
+  box-shadow: 0 6px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 340px;
+  min-width: 340px;
+  max-width: 340px;
+  height: 520px;
+  opacity: 0.5;
+  transform: scale(0.92);
+  transition: opacity 0.3s, transform 0.3s, box-shadow 0.3s, z-index 0s;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+}
+
+.actors-carousel .carousel-card .frame,
+.actors-carousel .carousel-card .frame-2,
+.actors-carousel .carousel-card .frame-3,
+.actors-carousel .carousel-card .frame-4,
+.actors-carousel .carousel-card .frame-5,
+.actors-carousel .carousel-card .frame-6,
+.actors-carousel .carousel-card .frame-7,
+.actors-carousel .carousel-card .frame-8 {
+  width: 100%;
+  height: 260px;
+  background: #444 url('img/actors-placeholder.png') center/cover no-repeat;
+  border-radius: 8px 8px 0 0;
+  margin-bottom: 0;
+}
+
+.actors-carousel .carousel-card .frame {
+  background-image: url('img/Actors/Pedro Pascal.jpg');
+}
+
+.actors-carousel .carousel-card .frame-2 {
+  background-image: url('img/Actors/resize.webp');
+}
+
+.actors-carousel .carousel-card .frame-3 {
+  background-image: url('img/Actors/Gabriel Luna.jpg');
+}
+
+.actors-carousel .carousel-card .frame-4 {
+  background-image: url('img/Actors/Marlene.jpg');
+}
+
+.actors-carousel .carousel-card .frame-5 {
+  background-image: url('img/Actors/Anna\ Torv.svg');
+}
+
+.actors-carousel .carousel-card .frame-6 {
+  background-image: url('img/Actors/Abby.svg');
+}
+
+.actors-carousel .carousel-card .frame-7 {
+  background-image: url('img/Actors/Dina.svg');
+}
+
+.actors-carousel .carousel-card .frame-8 {
+  background-image: url('img/Actors/Jesse.svg');
+}
+
+.actors-carousel .carousel-card .text-4 {
+  padding: 28px 22px 20px 22px;
+  color: #fff;
+  text-align: left;
+}
+
+.actors-carousel .carousel-card .title-3 {
+  margin: 0 0 12px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.actors-carousel .carousel-card .title-4 {
+  font-size: 1.2rem;
+  color: #bbb;
+  margin-bottom: 12px;
+}
+
+.actors-carousel .carousel-card .paragraph-3 {
+  margin: 0 0 16px 0;
+  font-size: 1.1rem;
+  color: #ccc;
+}
+
+.actors-carousel .carousel-card .social-media {
+  margin-top: 12px;
+}
+
+.actors-carousel .carousel-card .social-media-icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 30px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.actors-carousel .carousel-card .social-media-icon:last-child {
+  margin-right: 0;
+}
+
+.actors-carousel .carousel-card.focus {
+  opacity: 1;
+  transform: scale(1.08);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.32);
+  z-index: 3;
+  display: flex;
+}
+
+.actors-carousel .carousel-card.left,
+.actors-carousel .carousel-card.right {
+  opacity: 0.8;
+  transform: scale(0.98);
+  z-index: 2;
+  display: flex;
+}
+
+.actors-carousel .carousel-card.hidden {
+  display: none;
+}
+
+.actors-carousel .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(30, 30, 30, 0.7);
+  color: #fff;
+  border: none;
+  font-size: 2.4rem;
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.actors-carousel .carousel-btn:hover {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.actors-carousel .prev {
+  left: 10px;
+}
+
+.actors-carousel .next {
+  right: 10px;
+}
+
+.actors-carousel .carousel-dots {
+  margin-top: 22px;
+}
+
+.actors-carousel .dot {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0 6px;
+  background: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.actors-carousel .dot.active {
+  background: #333;
+}
+
+@media (max-width: 900px) {
+  .actors-carousel .carousel-track {
+    gap: 10px;
+    height: 340px;
+  }
+  .actors-carousel .carousel-card,
+  .actors-carousel .carousel-card.focus,
+  .actors-carousel .carousel-card.left,
+  .actors-carousel .carousel-card.right {
+    width: 180px;
+    min-width: 180px;
+    max-width: 180px;
+    height: 260px;
+  }
+  .actors-carousel .carousel-card .frame,
+  .actors-carousel .carousel-card .frame-2,
+  .actors-carousel .carousel-card .frame-3 {
+    height: 100px;
+    border-radius: 8px 8px 0 0;
+  }
+  .actors-carousel .carousel-card .text-4 {
+    padding: 12px 8px 8px 8px;
+    font-size: 0.95rem;
+  }
+  .actors-carousel .carousel-card .title-3 {
+    font-size: 1.1rem;
+  }
+  .actors-carousel .carousel-card .title-4 {
+    font-size: 0.95rem;
+  }
+  .actors-carousel .carousel-card .paragraph-3 {
+    font-size: 0.95rem;
+  }
+  .actors-carousel .carousel-card .social-media-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+  }
+}
+
 @media (max-width: 1200px) {
   .trailer-video {
     height: 320px;
@@ -1326,4 +1554,3 @@
     border-radius: 10px;
   }
 }
-
